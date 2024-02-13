@@ -29,3 +29,10 @@ input, textarea {
 	/* Use the same font and font metrics as the rest of the page */
 	font: inherit;
 }
+
+h1 {
+    font-weight: 1000
+}
+h2 {
+    font-weight: 300
+}
