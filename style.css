@@ -1,33 +1,31 @@
+:root {
+    --color-accent: oklch(65% 50% 0);
+}
 body {
  /* Set line height to 1.5 times the font size
     and use the OS’s UI font as the website font
   */
  font: 100%/1.5 system-ui;
+ max-width: 100ch;
+ margin-inline: max(1em, (100% - 100ch) / 2);
+ padding: 10ch;
+ accent-color: var(--color-accent);
 }
 
-label, input, textarea, button {
-	/* Make these elements behave like block elements,
-	   i.e. create line breaks before and after
-	 */
-	display: block;
+button {
+ font: 100%/1.5 system-ui;
 }
 
-label {
-	/* Add some space before and after each label */
-	margin-block: 1em; /* em is a unit that scales with the font size */
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
 }
 
-input, textarea {
-	/* Fill the whole available width. */
-	width: 100%;
-
-	/* Special sizing mode that makes the element’s width
-	   include internal spacing (padding) and borders
-	 */
-	box-sizing: border-box;
-
-	/* Use the same font and font metrics as the rest of the page */
-	font: inherit;
+label, button {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
 }
 
 h1 {
@@ -35,4 +33,44 @@ h1 {
 }
 h2 {
     font-weight: 300
+}
+nav ul, nav li {
+    display: contents;
+}
+nav {
+    display: flex;
+    margin-bottom: 1em;
+    border-bottom: 1px solid oklch(80% 3% 200);
+}
+.current {
+    border-bottom: 0.4em solid oklch(80% 3% 200);
+}
+nav a {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.5em;
+}
+nav a:hover {
+    border-bottom: 0.4em solid var(--color-accent);
+}
+
+img {
+    max-width: 100%;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 1em;
+}
+
+.projects article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+}
+.projects article h2 {
+    margin: 0;
 }
