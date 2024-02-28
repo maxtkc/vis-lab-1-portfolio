@@ -10,7 +10,7 @@ currentLink?.classList.add("current");
 
 let pages = [
 	{url: "index.html", title: "Home"},
-	{url: "resume.html", title: "Resume"},
+	{url: "resume/index.html", title: "Resume"},
 	{url: "projects/index.html", title: "Projects"},
 	{url: "contact/index.html", title: "Contact"},
 	{url: "https://github.com/maxtkc", title: "Github"},
