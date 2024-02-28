@@ -1,19 +1,21 @@
 :root {
     --color-accent: oklch(65% 50% 0);
+    color-scheme: light dark;
 }
+
 body {
- /* Set line height to 1.5 times the font size
+    /* Set line height to 1.5 times the font size
     and use the OS’s UI font as the website font
   */
- font: 100%/1.5 system-ui;
- max-width: 100ch;
- margin-inline: max(1em, (100% - 100ch) / 2);
- padding: 10ch;
- accent-color: var(--color-accent);
+    font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: max(1em, (100% - 100ch) / 2);
+    padding: 10ch;
+    accent-color: var(--color-accent);
 }
 
 button {
- font: 100%/1.5 system-ui;
+    font: 100%/1.5 system-ui;
 }
 
 form {
@@ -22,7 +24,8 @@ form {
     gap: 1em;
 }
 
-label, button {
+form label,
+form button {
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1 / -1;
@@ -31,20 +34,27 @@ label, button {
 h1 {
     font-weight: 1000
 }
+
 h2 {
     font-weight: 300
 }
-nav ul, nav li {
+
+nav ul,
+nav li {
     display: contents;
 }
+
 nav {
+    --border-color: oklch(50% 10% 200 / 40%);
     display: flex;
     margin-bottom: 1em;
-    border-bottom: 1px solid oklch(80% 3% 200);
+    border-bottom: 1px solid var(--border-color);
 }
+
 .current {
-    border-bottom: 0.4em solid oklch(80% 3% 200);
+    border-bottom: 0.4em solid var(--border-color);
 }
+
 nav a {
     flex: 1;
     text-decoration: none;
@@ -52,6 +62,7 @@ nav a {
     text-align: center;
     padding: 0.5em;
 }
+
 nav a:hover {
     border-bottom: 0.4em solid var(--color-accent);
 }
@@ -71,6 +82,15 @@ img {
     grid-template-rows: subgrid;
     grid-row: span 3;
 }
+
 .projects article h2 {
     margin: 0;
+}
+
+.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font: inherit;
+    font-size: 80%;
 }
